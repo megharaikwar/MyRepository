@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: timage1 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timage1
+  template:
+    metadata:
+      labels:
+        app: timage1 
+    spec:
+      containers:
+        - name: timage1 
+          image: akstrainingacr001.azurecr.io/timage1
+          ports:
+          - containerPort: 8080
